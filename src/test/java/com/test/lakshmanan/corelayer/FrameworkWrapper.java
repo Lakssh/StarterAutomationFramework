@@ -5,6 +5,7 @@
 package com.test.lakshmanan.corelayer;
 
 import com.test.lakshmanan.corelayer.drivermanager.DriverManager;
+import com.test.lakshmanan.corelayer.libraries.api.RestAssuredBase;
 import com.test.lakshmanan.corelayer.libraries.web.BrowserActions;
 import com.test.lakshmanan.corelayer.logging.LoggingUtilities;
 import com.test.lakshmanan.corelayer.testdata.PropertySettings;
@@ -21,13 +22,14 @@ public class FrameworkWrapper {
 
     private static final ThreadLocal<TestParameters> testParameters = new ThreadLocal<TestParameters>();
     private static Map<String, Object> scenarioContext;
-    public static WebDriver driver = getWebDriver();
 
     /* Getter and setter methods for web driver
        @Author : Lakshmanan Chellappan
     */
     public static void setWebDriver(Browser browser) {
         DriverManager.getInstance().instantiateWebDriver(browser);
+        browser().implicitlyWait(Integer.parseInt(globalProperties().getProperty("defaultWait")));
+
     }
     public static WebDriver getWebDriver() {
         return DriverManager.getInstance().getDriver();
@@ -82,6 +84,15 @@ public class FrameworkWrapper {
     */
     public static Properties globalProperties() {
         return  PropertySettings.getGlobalSettingsPropertyInstance();
+    }
+
+    /* Function to return all the api methods
+       @param  : n/a
+       @return : n/a
+       @Author : Lakshmanan Chellappan
+    */
+    public static RestAssuredBase api() {
+        return  RestAssuredBase.getInstance();
     }
 
 }

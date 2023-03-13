@@ -15,6 +15,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 
+import java.util.concurrent.TimeUnit;
+
 public class DriverManager {
 
     LoggingUtilities logger = FrameworkWrapper.logger();
@@ -62,6 +64,7 @@ public class DriverManager {
             default:
                 logger.addStepError("Browser parameter not provided in TestNG XML");
         }
+
 
     }
 

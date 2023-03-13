@@ -7,6 +7,7 @@ package com.test.lakshmanan.businesslayer.stepdefinitions;
 
 import com.test.lakshmanan.corelayer.drivermanager.DriverManager;
 import com.test.lakshmanan.corelayer.FrameworkWrapper;
+import com.test.lakshmanan.orchestrationlayer.enums.ExecutionMode;
 import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
@@ -24,8 +25,10 @@ public class CukeHooks extends FrameworkWrapper{
 
     @After
     public void tearDown(Scenario scenario){
-        DriverManager.getInstance().closeDriver();
-        logger().addStepLog("Execution completed for Scenario: " +getTestParameters().getScenario().getName() + " and driver closed");
+        if(getTestParameters().getExecutionMode() != ExecutionMode.valueOf("API") ){
+            DriverManager.getInstance().closeDriver();
+        }
+        logger().addStepLog("Execution completed for Scenario: " +getTestParameters().getScenario().getName());
     }
 
     @AfterStep

@@ -10,6 +10,7 @@ import io.cucumber.java.Scenario;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
@@ -110,6 +111,15 @@ public class BrowserActions {
             logger.addStepError("Timeout waiting for Page Load Request to complete.<br><b>Exception : </b>" + e);
             e.printStackTrace();
         }
+    }
+
+    /* Function to define the implicit wait
+       @param  : timeout in seconds
+       @return : n/a
+       @Author : Lakshmanan Chellappan
+    */
+    public void implicitlyWait(long timeOutInSeconds) {
+        driver.manage().timeouts().implicitlyWait(Duration.ofMinutes(timeOutInSeconds));
     }
 
     /* Function to attach screen shot to Extent report

@@ -36,6 +36,8 @@ public class TestngListener implements ITestListener {
                 break;
             case MOBILE:
                 break;
+            case API:
+                break;
             default:
                 FrameworkWrapper.logger().addStepError("************ Please provide the Correct Test Execution mode ************");
         }
@@ -79,9 +81,13 @@ public class TestngListener implements ITestListener {
     */
     public void setDefaultTestParameters(ITestContext context) {
         ExecutionMode executionMode = ExecutionMode.valueOf(context.getCurrentXmlTest().getParameter("executionMode"));
-        Browser browser = Browser.valueOf(context.getCurrentXmlTest().getParameter("browser"));
         parameters.setExecutionMode(executionMode);
-        parameters.setBrowser(browser);
+        try {
+            Browser browser = Browser.valueOf(context.getCurrentXmlTest().getParameter("browser"));
+            parameters.setBrowser(browser);
+        } catch (NullPointerException ignored){
+
+        }
         FrameworkWrapper.setParameters(parameters);
         // Initialize scenario context for data transfer between step definitions
         FrameworkWrapper.ScenarioContext();

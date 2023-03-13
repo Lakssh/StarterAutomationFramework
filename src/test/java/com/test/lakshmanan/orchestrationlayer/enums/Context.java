@@ -1,5 +1,9 @@
 package com.test.lakshmanan.orchestrationlayer.enums;
 
 public enum Context {
-    PRODUCT
+    PRODUCT,
+    APIRESPONSE,
+    ID,
+    NAME,
+    STATUS
 }
