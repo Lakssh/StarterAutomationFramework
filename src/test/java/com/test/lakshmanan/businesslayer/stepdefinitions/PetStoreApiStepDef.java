@@ -19,7 +19,7 @@ public class PetStoreApiStepDef extends FrameworkWrapper {
 
     @Given ("^I hit the pet store api$")
     public void i_hit_the_pet_store_api() throws InterruptedException, IOException {
-        api().setBaseUri();
+        api().setRequestSpecification();
     }
     @When ("^I add a new pet with name (.+) and status (.+)$")
     public void i_add_a_new_pet(String name, String status) throws InterruptedException {
