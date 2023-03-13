@@ -19,6 +19,7 @@ public class AmazonHomePageActions extends AmazonHomePage {
     }
 
     public String getProductText(int itemNo){
+        browser().element(productText).waitUntilElementVisible(30);
         List<WebElement> elements = getWebDriver().findElements(productText);
         WebElement e = elements.get(itemNo-1);
         return browser().element().getTextByElement(e);

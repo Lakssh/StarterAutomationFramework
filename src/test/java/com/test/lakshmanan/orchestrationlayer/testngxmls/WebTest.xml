@@ -5,19 +5,11 @@
         <listener class-name="com.test.lakshmanan.orchestrationlayer.TestngListener"></listener>
     </listeners>
     <test verbose="1" preserve-order="true"
-          name="Regression Suite-API">
-        <parameter name="executionMode" value="API"></parameter>
-        <classes>
-            <class name="com.test.lakshmanan.orchestrationlayer.cucumberrunners.ApiTestRunner" />
-        </classes>
-    </test>
-    <test verbose="1" preserve-order="true"
           name="Regression Suite-ChromeBrowser">
-        <parameter name="executionMode" value="LOCAL"></parameter>
-        <parameter name="browser" value="CHROME"></parameter>
         <classes>
             <class name="com.test.lakshmanan.orchestrationlayer.cucumberrunners.WebTestRunner" />
+            <parameter name="executionMode" value="LOCAL"></parameter>
+            <parameter name="browser" value="CHROME"></parameter>
         </classes>
     </test>
-
 </suite>

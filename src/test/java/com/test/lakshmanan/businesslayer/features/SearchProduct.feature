@@ -1,6 +1,6 @@
 Feature: Search Product
 
-  @Regression @SearchProduct @Ui
+  @Regression @SearchProduct @Web
   Scenario Outline: Search for a Product
     Given I launch the <application> and validate page title contains <pageTitle>
     When I search for the product <product>

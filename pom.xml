@@ -28,7 +28,7 @@
     <profile>
       <id>runRegressionTest</id>
       <properties>
-        <testNG.suiteXmlFile>src/test/resources/TestNGXMLs/RegressionTest.xml</testNG.suiteXmlFile>
+        <testNG.suiteXmlFile>src/test/java/com/test/lakshmanan/orchestrationlayer/testngxmls/RegressionTest.xml</testNG.suiteXmlFile>
       </properties>
       <build>
         <plugins>
@@ -117,12 +117,6 @@
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-java</artifactId>
       <version>${seleniumVersion}</version>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
-    <dependency>
-      <groupId>io.github.bonigarcia</groupId>
-      <artifactId>webdrivermanager</artifactId>
-      <version>5.2.3</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter -->
     <dependency>

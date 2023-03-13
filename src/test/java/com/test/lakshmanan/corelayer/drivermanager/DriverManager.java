@@ -7,7 +7,6 @@ package com.test.lakshmanan.corelayer.drivermanager;
 import com.test.lakshmanan.corelayer.FrameworkWrapper;
 import com.test.lakshmanan.corelayer.logging.LoggingUtilities;
 import com.test.lakshmanan.orchestrationlayer.enums.Browser;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -38,26 +37,22 @@ public class DriverManager {
     public void instantiateWebDriver(Browser browser) {
         switch (browser) {
             case CHROME:
-                WebDriverManager.chromedriver().setup();
                 ChromeOptions options = new ChromeOptions();
                 options.addArguments("--remote-allow-origins=*");
                 driver.set(new ChromeDriver(options));
                 driver.get().manage().window().maximize();
                 break;
             case CHROME_HEADLESS:
-                WebDriverManager.chromedriver().setup();
                 ChromeOptions chOptions = new ChromeOptions();
                 chOptions.addArguments("--headless");
                 driver.set(new ChromeDriver(chOptions));
                 driver.get().manage().window().maximize();
                 break;
             case FIREFOX:
-                WebDriverManager.firefoxdriver().setup();
                 driver.set(new FirefoxDriver());
                 driver.get().manage().window().maximize();
                 break;
             case EDGE:
-                WebDriverManager.edgedriver().setup();
                 driver.set(new EdgeDriver());
                 driver.get().manage().window().maximize();
                 break;

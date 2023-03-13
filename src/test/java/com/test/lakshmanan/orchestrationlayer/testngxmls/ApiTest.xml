@@ -7,7 +7,7 @@
     <test verbose="1" preserve-order="true"
           name="Regression Suite-API">
         <classes>
-            <class name="com.test.lakshmanan.orchestrationlayer.cucumberrunners.RegressionTestRunner" />
+            <class name="com.test.lakshmanan.orchestrationlayer.cucumberrunners.WebTestRunner" />
             <parameter name="executionMode" value="API"></parameter>
         </classes>
     </test>
