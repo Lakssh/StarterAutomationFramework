@@ -12,6 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
 
 import java.util.concurrent.TimeUnit;
@@ -40,27 +41,25 @@ public class DriverManager {
                 ChromeOptions options = new ChromeOptions();
                 options.addArguments("--remote-allow-origins=*");
                 driver.set(new ChromeDriver(options));
-                driver.get().manage().window().maximize();
                 break;
             case CHROME_HEADLESS:
                 ChromeOptions chOptions = new ChromeOptions();
                 chOptions.addArguments("--headless");
                 driver.set(new ChromeDriver(chOptions));
-                driver.get().manage().window().maximize();
                 break;
             case FIREFOX:
                 driver.set(new FirefoxDriver());
-                driver.get().manage().window().maximize();
                 break;
             case EDGE:
                 driver.set(new EdgeDriver());
-                driver.get().manage().window().maximize();
+                break;
+            case SAFARI:
+                driver.set(new SafariDriver());
                 break;
             default:
                 logger.addStepError("Browser parameter not provided in TestNG XML");
         }
-
-
+        driver.get().manage().window().maximize();
     }
 
     /* Function to get the driver for the instance
