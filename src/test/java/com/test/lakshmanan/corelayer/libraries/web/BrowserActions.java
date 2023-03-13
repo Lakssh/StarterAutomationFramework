@@ -7,11 +7,10 @@ package com.test.lakshmanan.corelayer.libraries.web;
 import com.test.lakshmanan.corelayer.FrameworkWrapper;
 import com.test.lakshmanan.corelayer.logging.LoggingUtilities;
 import io.cucumber.java.Scenario;
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;

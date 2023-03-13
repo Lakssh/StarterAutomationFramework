@@ -65,13 +65,8 @@ public class TestngListener implements ITestListener {
     }
 
     @Override
-    public void onTestFailedWithTimeout(ITestResult result) {
-
-    }
-
-    @Override
     public void onFinish(ITestContext context) {
-        DriverManager.getInstance().quitDriver();
+
     }
 
     /* Function to set default Test parameters from the TestNG XML

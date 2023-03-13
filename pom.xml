@@ -8,12 +8,11 @@
   <artifactId>StarterAutomationFramework</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <cucumberVersion>7.11.1</cucumberVersion>
+    <cucumberVersion>6.9.1</cucumberVersion>
     <testngVersion>7.4.0</testngVersion>
     <seleniumVersion>4.8.1</seleniumVersion>
     <maven-compiler-pluginVersion>3.8.0</maven-compiler-pluginVersion>
@@ -53,8 +52,6 @@
               <argLine>
                 -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
               </argLine>
-              <!-- Remember to set the testFailureIgnore set to true if you want
-                  to run cucumber.jvm.parallel.JSReportMergerer even if some of the tests failed. -->
               <testFailureIgnore>true</testFailureIgnore>
             </configuration>
             <executions>
@@ -79,11 +76,16 @@
   </profiles>
 
   <dependencies>
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.11.0</version>
+    </dependency>
     <!-- https://mvnrepository.com/artifact/junit/junit -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.13.2</version>
+      <version>4.11</version>
       <scope>test</scope>
     </dependency>
     <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
@@ -121,21 +123,9 @@
     <!-- https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter -->
     <dependency>
       <groupId>tech.grasshopper</groupId>
-      <artifactId>extentreports-cucumber7-adapter</artifactId>
-      <version>1.10.1</version>
+      <artifactId>extentreports-cucumber6-adapter</artifactId>
+      <version>2.8.1</version>
       <scope>test</scope>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
-    <dependency>
-      <groupId>com.aventstack</groupId>
-      <artifactId>extentreports</artifactId>
-      <version>5.0.9</version>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/tech.grasshopper/extent-pdf-report -->
-    <dependency>
-      <groupId>tech.grasshopper</groupId>
-      <artifactId>extent-pdf-report</artifactId>
-      <version>2.9.1</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
     <dependency>
@@ -158,49 +148,4 @@
     </dependency>
   </dependencies>
 
-  <build>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
-      <plugins>
-        <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
-        <plugin>
-          <artifactId>maven-clean-plugin</artifactId>
-          <version>3.1.0</version>
-        </plugin>
-        <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
-        <plugin>
-          <artifactId>maven-resources-plugin</artifactId>
-          <version>3.0.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.8.0</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.22.1</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-jar-plugin</artifactId>
-          <version>3.0.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-install-plugin</artifactId>
-          <version>2.5.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-deploy-plugin</artifactId>
-          <version>2.8.2</version>
-        </plugin>
-        <!-- site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->
-        <plugin>
-          <artifactId>maven-site-plugin</artifactId>
-          <version>3.7.1</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>3.0.0</version>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-  </build>
 </project>

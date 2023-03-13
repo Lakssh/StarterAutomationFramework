@@ -30,11 +30,17 @@ public class RestAssuredBase {
     }
 
     public RequestSpecification setLogs() {
-        return requestSpecification
-                .given()
-                .log()
-                .all()
-                .contentType(getContentType());
+        if (FrameworkWrapper.globalProperties().getProperty("disableApiLogging").equals("True")){
+            return requestSpecification
+                    .given()
+                    .contentType(getContentType());
+        }else {
+            return requestSpecification
+                    .given()
+                    .log()
+                    .all()
+                    .contentType(getContentType());
+        }
     }
 
     public Response get() {

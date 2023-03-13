@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite" parallel="tests" data-provider-thread-count="1">
+<suite name="All Test Suite" parallel="methods" data-provider-thread-count="1">
     <listeners>
         <listener class-name="com.test.lakshmanan.orchestrationlayer.TestngListener"></listener>
     </listeners>
@@ -13,10 +13,10 @@
     </test>
     <test verbose="1" preserve-order="true"
           name="Regression Suite-ChromeBrowser">
-        <parameter name="executionMode" value="LOCAL"></parameter>
-        <parameter name="browser" value="CHROME"></parameter>
         <classes>
             <class name="com.test.lakshmanan.orchestrationlayer.cucumberrunners.WebTestRunner" />
+            <parameter name="executionMode" value="LOCAL"></parameter>
+            <parameter name="browser" value="CHROME"></parameter>
         </classes>
     </test>
 
