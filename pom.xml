@@ -33,42 +33,13 @@
         <plugins>
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>${maven-compiler-pluginVersion}</version>
-            <configuration>
-              <encoding>UTF-8</encoding>
-              <source>${source.and.target.JVM.version}</source>
-              <target>${source.and.target.JVM.version}</target>
-            </configuration>
-          </plugin>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-plugin</artifactId>
             <version>${org.apache.maven.plugins.maven-surefire-plugin.version}</version>
             <configuration>
               <suiteXmlFiles>
                 <suiteXmlFile>${testNG.suiteXmlFile}</suiteXmlFile>
               </suiteXmlFiles>
-              <argLine>
-                -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
-              </argLine>
-              <testFailureIgnore>true</testFailureIgnore>
             </configuration>
-            <executions>
-              <execution>
-                <phase>integration-test</phase>
-                <goals>
-                  <goal>test</goal>
-                </goals>
-              </execution>
-            </executions>
-            <dependencies>
-              <dependency>
-                <groupId>org.aspectj</groupId>
-                <artifactId>aspectjweaver</artifactId>
-                <version>${aspectj.version}</version>
-              </dependency>
-            </dependencies>
           </plugin>
         </plugins>
       </build>

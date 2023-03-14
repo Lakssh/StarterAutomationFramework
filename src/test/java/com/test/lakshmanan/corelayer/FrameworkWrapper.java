@@ -5,7 +5,7 @@
 package com.test.lakshmanan.corelayer;
 
 import com.test.lakshmanan.corelayer.drivermanager.DriverManager;
-import com.test.lakshmanan.corelayer.libraries.api.RestAssuredBase;
+import com.test.lakshmanan.corelayer.libraries.api.RestAssuredUtilities;
 import com.test.lakshmanan.corelayer.libraries.web.BrowserActions;
 import com.test.lakshmanan.corelayer.logging.LoggingUtilities;
 import com.test.lakshmanan.corelayer.testdata.PropertySettings;
@@ -91,8 +91,8 @@ public class FrameworkWrapper {
        @return : n/a
        @Author : Lakshmanan Chellappan
     */
-    public static RestAssuredBase api() {
-        return  RestAssuredBase.getInstance();
+    public static RestAssuredUtilities api() {
+        return  RestAssuredUtilities.getInstance();
     }
 
 }

@@ -31,7 +31,7 @@ public class SearchProductStepDef extends FrameworkWrapper {
     @Then("^I validate the first result contains the text (.+)$")
     public void i_validate_the_first_result_contains_the_text(String productText) throws InterruptedException, IOException {
         String actualValue = homePage.getProductText(1);
-        browser().verify().validateTextContains(actualValue,"Apple iPhone");
+        browser().verify().validateTextContains(actualValue,productText);
         browser().addScreenshot (getTestParameters().getScenario());
     }
 }
