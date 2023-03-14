@@ -1,4 +1,4 @@
-Feature: Search Product
+Feature: Amazon - Search Product
 
   @Regression @SearchProduct @Web
   Scenario Outline: Search for a Product

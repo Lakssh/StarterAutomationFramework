@@ -1,4 +1,4 @@
-Feature: Pet Store API Tests
+Feature: Pet store API Tests
 
   @Regression @Api
   Scenario Outline: CRUD operations with Pet store APIs
