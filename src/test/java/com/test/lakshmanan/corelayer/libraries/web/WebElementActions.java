@@ -36,7 +36,7 @@ public class WebElementActions {
        @Author : Lakshmanan Chellappan
     */
     public void waitUntilElementVisible(long timeOutInSeconds) {
-        (new WebDriverWait(driver, Duration.ofMinutes(timeOutInSeconds)))
+        (new WebDriverWait(driver, Duration.ofSeconds(timeOutInSeconds)))
                 .until(ExpectedConditions.visibilityOfElementLocated(by));
     }
 
@@ -46,7 +46,7 @@ public class WebElementActions {
        @Author : Lakshmanan Chellappan
     */
     public void waitUntilElementClickable(long timeOutInSeconds) {
-        (new WebDriverWait(driver, Duration.ofMinutes(timeOutInSeconds)))
+        (new WebDriverWait(driver, Duration.ofSeconds(timeOutInSeconds)))
                 .until(ExpectedConditions.elementToBeClickable(by));
     }
 

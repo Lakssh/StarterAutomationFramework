@@ -104,7 +104,7 @@ public class BrowserActions {
             }
         };
         try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofMinutes(timeOutInSeconds));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOutInSeconds));
             wait.until(pageLoadCondition);
         } catch (Exception e) {
             logger.addStepError("Timeout waiting for Page Load Request to complete.<br><b>Exception : </b>" + e);
@@ -118,7 +118,7 @@ public class BrowserActions {
        @Author : Lakshmanan Chellappan
     */
     public void implicitlyWait(long timeOutInSeconds) {
-        driver.manage().timeouts().implicitlyWait(Duration.ofMinutes(timeOutInSeconds));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(timeOutInSeconds));
     }
 
     /* Function to attach screen shot to Extent report
