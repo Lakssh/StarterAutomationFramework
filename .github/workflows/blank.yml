@@ -1,0 +1,25 @@
+name: ACCELQ Github Action CI
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: ACCELQ Github-A Connect
+      # You may pin to the exact commit or the version.
+      # uses: accelq/accelq-ci-github-actions@953369c4991322d0eb25d68f449a7d8c574c58d1
+      uses: accelq/accelq-ci-github-actions@v1.1
+      with:
+        # Your ACCELQ Application URL in the exact following format: https://<hostname>:<port_num>
+        appURL: "https://accelq.io"
+        # Your ACCELQ User ID
+        userName: "abc@accelq.com"
+        # API key available in Profile section of ACCELQ
+        apiKey: "XXXXXXXXXXXXXXXXXXXX"
+        # Tenant Code displayed in the Profile section of ACCELQ
+        tenantCode: "accelq"
+        # This ID should come from the CI job you saved in ACCELQ application
+        jobId: "23"
+        # Run Params(optional) should be JSON string form example: '{"username": "John Todd", "password": "bxW&=UVw"}'
+        runParam: '{"username": "XXXX", "password": "XXXXX"}'
