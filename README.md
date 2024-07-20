@@ -1,6 +1,6 @@
 # Starter Automation Framework
 
-    This is the basic test automation framework built for technical assessment
+    This is the basic test automation framework built for technical assessment.
     Hybrid framework built using different component - Selenium with Java Binding ,TestNG ,Cucumber surfaced by
     Page Object Model, Singleton and factory design pattern with extent report driven by 3 Layered Architecture
 
